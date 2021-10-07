@@ -1,0 +1,34 @@
+{
+  "type": "module",
+  "name": "candy-box-demo",
+  "version": "1.0.0",
+  "exports": {
+    "./": "./src/"
+  },
+  "scripts": {
+    "client": "./node_modules/webpack/bin/webpack.js --watch --progress --config=webpack.config.js",
+    "server": "node ./src/server.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.13.5",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.24.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.15.4",
+    "@babel/runtime-corejs3": "^7.15.4",
+    "@vue/compiler-sfc": "^3.1.5",
+    "candy-box": "git+https://github.com/masterfri/candy-box.git",
+    "core-js": "^3.18.1",
+    "regenerator-runtime": "^0.13.9",
+    "vue": "^3.1.5",
+    "vue-loader": "^16.3.3",
+    "vue-router": "^4.0.10",
+    "vuex": "^4.0.2"
+  }
+}
