@@ -1,0 +1,189 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #555;
+    padding: 0;
+    margin: 0;
+}
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+    max-width: 800px;
+    margin: 0 auto;
+}
+#app > header {
+    flex-shrink: 1;
+    padding: 10px 15px 20px;
+}
+#app > header > nav {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+nav a {
+    display: inline-block;
+}
+nav a + a {
+    margin-left: 10px;
+}
+#app > header > h1 {
+    margin: 0;
+}
+#app > footer {
+    flex-shrink: 1;
+    padding: 10px 15px;
+}
+#app > main {
+    flex-grow: 1;
+    padding: 0 15px;
+}
+.control + .control {
+    margin-top: 10px;
+}
+.control label {
+    display: block;
+}
+.control input:not([type=checkbox]), .control select {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    padding: 5px;
+    font-size: 1em;
+    background-color: #fff;
+}
+button {
+    padding: 8px 10px;
+    min-width: 200px;
+    text-align: center;
+    background: #0091e3;
+    display: inline-block;
+    border: none;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+}
+button:hover {
+    background: #00a3ff;
+}
+ul.errors {
+    padding: 0;
+    margin: 5px 0 0 0;
+    list-style: inside;
+}
+ul.errors li {
+    color: #f00;
+    font-size: 0.9em;
+}
+.dataset {
+    padding: 0;
+    margin: 15px 0;
+    border-top: 1px solid #777;
+    border-collapse: collapse;
+    width: 100%;
+}
+.dataset th, .dataset td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #777;
+    text-align: left;
+}
+.dataset thead th {
+    border-bottom: 2px solid #777;
+    border-top: 1px solid #777;
+}
+.dataset td.actions {
+    text-align: right;
+}
+.dataset td.actions a {
+    display: inline-block;
+}
+.dataset td.actions a + a {
+    margin-left: 5px;
+}
+.dataset td.number, .dataset th.number {
+    text-align: right;
+}
+a.danger {
+    color: #f00;
+}
+ul.error {
+    margin: 10px 15px;
+    padding: 15px 15px 15px 30px;
+    border: 2px solid #f00;
+}
+ul.error > li {
+    color: #f00;
+}
+.message {
+    font-weight: bold;
+}
+.message.alert {
+    color: red;
+}
+.menu .products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+}
+.menu .product {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background: #eee;
+}
+.menu .product .price {
+    font-style: italic;
+    margin-top: 10px;
+}
+.menu .product .order {
+    flex-shrink: 1;
+}
+.menu .product .info {
+    flex-grow: 1;
+}
+.menu .product h4 {
+    margin: 0;
+    flex-grow: 1;
+}
+.menu .product .order form {
+    display: flex;
+    margin: 15px 0 0 0;
+}
+.menu .product .order .control + .control {
+    margin: 0 0 0 10px;
+}
+.menu .product .order .control input {
+    width: 90px;
+    height: 2em;
+}
+.menu .product .order .control button {
+    min-width: 0;
+    height: 2em;
+}
+.menu .product .addons {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+}
+.menu .product .head {
+    display: flex;
+}
+.menu .product .head .in-cart {
+    flex-shrink: 1;
+}
+.menu .product .head .in-cart button {
+    width: 20px;
+    display: inline;
+    min-width: 0;
+    height: 1em;
+    vertical-align: middle;
+    padding: 0;
+    background-color: #f00;
+}
+.userbar span, .userbar a {
+    display: inline-block;
+}
+.userbar span + span, .userbar span + a, .userbar a + span {
+    margin-left: 10px;
+}
