@@ -1,8 +1,9 @@
 import RepositoryRequestMap from 'candy-box/repository/request-map.js';
-import Request, {
+import {
+    BaseRequest,
     Method } from 'candy-box/transport/request.js';
 
-class StoreCategoryRequest extends Request
+class StoreCategoryRequest extends BaseRequest
 {
     method() {
         return Method.PUT;

@@ -26,18 +26,18 @@ class CategoryRepositoryProxy extends RepositoryProxy
     /**
      * Serialize menu
      * 
-     * @param {Collection} collection 
+     * @param {Array} collection 
      * @returns {Array}
      */
     _serializeMenu(collection) {
-        return collection.all().map((category) => ({
+        return collection.map((category) => ({
             id: category.id,
             name: category.name,
-            products: category.products.value.all().map((product) => ({
+            products: category.products.value.map((product) => ({
                 id: product.id,
                 name: product.name,
                 price: product.price,
-                addons: product.addons.value.all().map((addon) => ({
+                addons: product.addons.value.map((addon) => ({
                     id: addon.id,
                     name: addon.name,
                     price: addon.price,

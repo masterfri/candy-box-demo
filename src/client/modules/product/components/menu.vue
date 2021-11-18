@@ -76,13 +76,13 @@ export default {
     },
     mounted() {
         categories().menu().then((results) => {
-            this.menu = results.all()
+            this.menu = results
                 .filter((category) => category.products.value.length !== 0)
                 .map((category) => ({
                     category: Object.freeze(category),
-                    products: category.products.value.all().map((product) => ({
+                    products: category.products.value.map((product) => ({
                         product: Object.freeze(product),
-                        addons: product.addons.value.all().map((addon) => Object.freeze(addon)),
+                        addons: product.addons.value.map((addon) => Object.freeze(addon)),
                         qty: 1,
                         selectedAddons: [],
                     })),

@@ -1,5 +1,5 @@
 import RepositoryProxy from 'candy-box/repository/proxy.js';
-import { onlyProps,
+import { pickProps,
     isNil } from 'candy-box/helpers.js';
 import { hashPassword } from 'candy-box/auth/identity.js';
 
@@ -12,7 +12,7 @@ class UserRepositoryProxy extends RepositoryProxy
     }
 
     _getDocumentFromRequest(request) {
-        let data = onlyProps(request.body, [
+        let data = pickProps(request.body, [
             'id', 'login', 'name', 'role',
         ]);
         let user = this._repository.newDocument(data);
@@ -24,7 +24,7 @@ class UserRepositoryProxy extends RepositoryProxy
     }
 
     _serializeDocument(document) {
-        return onlyProps(document.export(), [
+        return pickProps(document.export(), [
             'id', 'login', 'name', 'role', 'balance',
         ]);
     }

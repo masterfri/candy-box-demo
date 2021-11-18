@@ -1,7 +1,8 @@
-import Request, {
+import {
+    BaseRequest,
     Method } from 'candy-box/transport/request.js';
 
-class LoginRequest extends Request
+class LoginRequest extends BaseRequest
 {
     method() {
         return Method.POST;

@@ -1,19 +1,17 @@
 import Order from 'candy-box-demo/modules/product/modules/order/documents/order.js';
 import OrderItem from 'candy-box-demo/modules/product/modules/order/documents/order-item.js';
 import orders from 'candy-box-demo/client/modules/product/modules/order/repositories/orders.js';
-import Collection from 'candy-box/structures/collection.js';
 
 export default {
     namespaced: true,
     state: () => ({
         order: null,
-        items: new Collection(),
+        items: [],
     }),
     mutations: {
         update(state, {order, items}) {
             state.order = order;
-            state.items.clear();
-            state.items.push(...items);
+            state.items = [...items];
         },
     },
     actions: {
@@ -25,12 +23,12 @@ export default {
                 }
                 commit('update', {
                     order, 
-                    items: order.items.value.all(),
+                    items: order.items.value,
                 });
             });
         },
         add({commit, state}, {products, qty}) {
-            let newItems = [...state.items.all()];
+            let newItems = [...state.items];
             products.forEach((product) => {
                 let index = newItems.findIndex((i) => i.product_id === product.id);
                 if (index === -1) {
@@ -51,7 +49,7 @@ export default {
             });
         },
         remove({commit, state}, {products}) {
-            let newItems = state.items.all().filter((item) => {
+            let newItems = state.items.filter((item) => {
                 return products.every((product) => item.product_id !== product.id);
             });
             return orders().storeCart(state.order, newItems).then((order) => {
@@ -71,7 +69,7 @@ export default {
                 }
                 commit('update', {
                     order: result, 
-                    items: [...state.items.all()],
+                    items: [...state.items],
                 });
                 return true;
             });

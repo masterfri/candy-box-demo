@@ -21,7 +21,7 @@ class OrderRepository extends SqlRepository
                 let store = items.map((item) => {
                     let index = currentItems.findIndex((i) => i.product_id === item.product_id);
                     if (index !== -1) {
-                        let current = currentItems.get(index);
+                        let current = currentItems[index];
                         current.qty = item.qty;
                         return current;
                     }
@@ -84,7 +84,7 @@ class OrderRepository extends SqlRepository
             if (results.length === 0) {
                 return null;
             }
-            let order = results.first();
+            let order = results[0];
             return order.items.get().then(() => order);
         });
     }
